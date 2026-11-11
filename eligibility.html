@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScholarPath – Eligibility Checker</title>
+  <meta name="description" content="Fill in your details to see which scholarships match your profile.">
+  <meta name="theme-color" content="#0b1026">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%234f46e5'/%3E%3Cpath d='M20 10.5 12 6.5l-8 4 8 4 8-4z' fill='none' stroke='white' stroke-width='1.8' stroke-linejoin='round'/%3E%3Cpath d='M7.5 12.5v3.5c2.5 2 6.5 2 9 0v-3.5' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.className += " js";</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a href="index.html" class="logo" aria-label="ScholarPath home">
+        <span class="logo-mark" data-icon="cap"></span><span>Scholar<span>Path</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">Scholarships</a></li>
+        <li><a href="eligibility.html" class="active" aria-current="page">Eligibility Checker</a></li>
+        <li><a href="guide.html">Application Guide</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span data-icon="chevronRight"></span><span>Eligibility Checker</span></nav>
+        <h1>Eligibility Checker</h1>
+        <p>Fill in your details to see which scholarships match your profile</p>
+      </div>
+    </div>
+
+    <section class="details-section">
+      <div class="container">
+        <div class="elig-layout">
+          <aside class="panel elig-aside reveal">
+            <h2>How it works</h2>
+            <p>We compare your profile with the rules of every scholarship in our directory.</p>
+            <ul class="elig-points">
+              <li><span class="ico" data-icon="cap"></span><div><strong>Study level</strong>Must match the level you are applying for.</div></li>
+              <li><span class="ico" data-icon="star"></span><div><strong>CGPA</strong>Must be at or above the minimum required.</div></li>
+              <li><span class="ico" data-icon="wallet"></span><div><strong>Family income</strong>Need-based awards have an income limit.</div></li>
+              <li><span class="ico" data-icon="globe"></span><div><strong>Field, gender and location</strong>Some awards are only for certain students.</div></li>
+              <li><span class="ico" data-icon="calendar"></span><div><strong>Deadline</strong>Closed scholarships are not counted.</div></li>
+            </ul>
+            <p class="privacy-note"><span data-icon="lock"></span>Your details stay in your browser. Nothing is sent anywhere.</p>
+          </aside>
+
+          <div>
+            <form class="panel" id="eligibilityForm" novalidate>
+              <div class="form-head">
+                <div>
+                  <h2>Your profile</h2>
+                  <p>Fields marked <span style="color:var(--rose)">*</span> are required</p>
+                </div>
+              </div>
+              <div class="form-alert" id="formAlert" role="alert"><span data-icon="alert"></span><span>Please fix the highlighted fields and try again.</span></div>
+              <div class="form-grid">
+                <div class="form-group full" data-field="name">
+                  <label for="name">Full Name<span class="req">*</span></label>
+                  <div class="control">
+                    <input type="text" id="name" placeholder="e.g. Ayesha Khan" autocomplete="name" aria-describedby="nameError">
+                    <span class="state-ico good" data-icon="checkCircle"></span><span class="state-ico bad" data-icon="alert"></span>
+                  </div>
+                  <span class="error" id="nameError" aria-live="polite"></span>
+                </div>
+                <div class="form-group" data-field="level">
+                  <label for="level">Level You Are Applying For<span class="req">*</span></label>
+                  <div class="control">
+                    <select id="level" aria-describedby="levelError">
+                      <option value="">Select level</option>
+                      <option>Intermediate</option>
+                      <option>Undergraduate</option>
+                      <option>Masters</option>
+                      <option>PhD</option>
+                    </select>
+                    <span class="state-ico good" data-icon="checkCircle"></span><span class="state-ico bad" data-icon="alert"></span>
+                  </div>
+                  <span class="error" id="levelError" aria-live="polite"></span>
+                </div>
+                <div class="form-group" data-field="gpa">
+                  <label for="gpa">Current CGPA (out of 4.0)<span class="req">*</span></label>
+                  <div class="control">
+                    <input type="number" id="gpa" step="0.01" min="0" max="4" placeholder="e.g. 3.2" inputmode="decimal" aria-describedby="gpaError">
+                    <span class="state-ico good" data-icon="checkCircle"></span><span class="state-ico bad" data-icon="alert"></span>
+                  </div>
+                  <span class="error" id="gpaError" aria-live="polite"></span>
+                </div>
+                <div class="form-group" data-field="income">
+                  <label for="income">Monthly Family Income (Rs.)<span class="req">*</span></label>
+                  <div class="control">
+                    <input type="number" id="income" min="0" placeholder="e.g. 50000" inputmode="numeric" aria-describedby="incomeError">
+                    <span class="state-ico good" data-icon="checkCircle"></span><span class="state-ico bad" data-icon="alert"></span>
+                  </div>
+                  <span class="error" id="incomeError" aria-live="polite"></span>
+                </div>
+                <div class="form-group">
+                  <label for="field">Field of Study</label>
+                  <div class="control">
+                    <select id="field">
+                      <option value="Any">Any / Other</option>
+                      <option>Science</option>
+                      <option>Engineering</option>
+                      <option>Business</option>
+                      <option>Arts</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="gender">Gender</label>
+                  <div class="control">
+                    <select id="gender">
+                      <option value="">Prefer not to say</option>
+                      <option>Female</option>
+                      <option>Male</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="where">Where Do You Want to Study?</label>
+                  <div class="control">
+                    <select id="where">
+                      <option value="any">Anywhere</option>
+                      <option value="local">Pakistan only</option>
+                      <option value="abroad">Abroad only</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary"><span data-icon="target"></span>Check Eligibility</button>
+                <button type="reset" class="btn btn-outline" id="resetBtn"><span data-icon="refresh"></span>Reset</button>
+              </div>
+            </form>
+
+            <div id="results" tabindex="-1"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><span class="logo-mark" data-icon="cap"></span><span>Scholar<span>Path</span></span></a>
+          <p>ScholarPath &ndash; Scholarship and Financial Aid Information. Find local and international scholarships, check your eligibility and apply with confidence.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html">Scholarship Directory</a></li>
+            <li><a href="eligibility.html">Eligibility Checker</a></li>
+            <li><a href="guide.html">Application Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Study Levels</h4>
+          <ul>
+            <li><a href="directory.html?level=Intermediate">Intermediate</a></li>
+            <li><a href="directory.html?level=Undergraduate">Undergraduate</a></li>
+            <li><a href="directory.html?level=Masters">Masters</a></li>
+            <li><a href="directory.html?level=PhD">PhD</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Good to know</h4>
+          <div class="footer-note"><span data-icon="info"></span><span>Information is for guidance only &ndash; always confirm on the official website. Real scholarships never ask you to pay to apply.</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> ScholarPath. Developed by <strong>Marwa Akram</strong>.</p>
+        <p>Information is for guidance only &ndash; always confirm on the official website.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/eligibility.js"></script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScholarPath – Find the Right Scholarship for You</title>
+  <meta name="description" content="Browse local and international scholarships, check your eligibility in seconds and learn how to put together a strong application.">
+  <meta name="theme-color" content="#0b1026">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%234f46e5'/%3E%3Cpath d='M20 10.5 12 6.5l-8 4 8 4 8-4z' fill='none' stroke='white' stroke-width='1.8' stroke-linejoin='round'/%3E%3Cpath d='M7.5 12.5v3.5c2.5 2 6.5 2 9 0v-3.5' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.className += " js";</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a href="index.html" class="logo" aria-label="ScholarPath home">
+        <span class="logo-mark" data-icon="cap"></span><span>Scholar<span>Path</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+        <li><a href="directory.html">Scholarships</a></li>
+        <li><a href="eligibility.html">Eligibility Checker</a></li>
+        <li><a href="guide.html">Application Guide</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="eyebrow-dot" data-icon="award"></span><span id="heroEyebrow">Scholarships for Pakistani students</span></span>
+          <h1>Find the Right <span class="gradient-text">Scholarship</span> for You</h1>
+          <p class="hero-lead">Browse local and international scholarships, check your eligibility in seconds and learn how to put together a strong application.</p>
+          <form class="hero-search" id="heroSearch" role="search">
+            <span class="ico" data-icon="search"></span>
+            <label for="heroInput" class="sr-only">Search scholarships</label>
+            <input type="text" id="heroInput" placeholder="Search by name, country or level...">
+            <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+          <div class="hero-tags">
+            <span>Popular:</span>
+            <a href="directory.html?search=Masters">Masters</a>
+            <a href="directory.html?search=Pakistan">Pakistan</a>
+            <a href="directory.html?search=UK">UK</a>
+            <a href="directory.html?search=Need-Based">Need-based</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="glass hv-main">
+            <div class="hv-row">
+              <span class="hv-avatar" data-icon="award"></span>
+              <div>
+                <div class="hv-title" id="hvTitle">Fulbright Scholarship</div>
+                <div class="hv-sub" id="hvProvider">USEFP</div>
+              </div>
+            </div>
+            <div class="hv-meta">
+              <div class="hv-chip"><span data-icon="cap"></span><span id="hvLevel">Masters</span></div>
+              <div class="hv-chip"><span data-icon="globe"></span><span id="hvCountry">USA</span></div>
+              <div class="hv-chip"><span data-icon="wallet"></span><span id="hvAmount">Fully funded</span></div>
+              <div class="hv-chip"><span data-icon="calendar"></span><span id="hvDeadline">1 Feb 2027</span></div>
+            </div>
+            <div>
+              <div class="hv-foot"><span>Document checklist</span><span>7 of 10</span></div>
+              <div class="hv-bar" style="margin-top:14px"><span></span></div>
+            </div>
+          </div>
+          <div class="glass hv-float hv-float-1">
+            <span class="badge-ico" data-icon="checkCircle"></span>
+            <div><strong>Instant results</strong><small>see where you qualify</small></div>
+          </div>
+          <div class="glass hv-float hv-float-2">
+            <span class="badge-ico" data-icon="clock"></span>
+            <div><strong id="hvSoon">23 days left</strong><small>nearest deadline</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container stats-wrap">
+      <div class="stats reveal">
+        <div class="stat"><span class="stat-ico" data-icon="award"></span><div><h3 id="statTotal">0</h3><p>Scholarships Listed</p></div></div>
+        <div class="stat"><span class="stat-ico" data-icon="globe"></span><div><h3 id="statCountries">0</h3><p>Countries</p></div></div>
+        <div class="stat"><span class="stat-ico" data-icon="checkCircle"></span><div><h3 id="statOpen">0</h3><p>Open Right Now</p></div></div>
+        <div class="stat"><span class="stat-ico" data-icon="star"></span><div><h3 id="statFunded">0</h3><p>Fully Funded</p></div></div>
+      </div>
+    </div>
+
+    <section>
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">What you get</span>
+          <h2>How ScholarPath Helps</h2>
+          <p>Everything you need, from searching to submitting</p>
+        </div>
+        <div class="features">
+          <article class="feature reveal" style="--d:0">
+            <span class="feature-ico" data-icon="search"></span>
+            <h3>Scholarship Directory</h3>
+            <p>Search and filter scholarships by study level, country and funding type.</p>
+            <a href="directory.html" class="link-arrow">Browse scholarships <span data-icon="arrowRight"></span></a>
+          </article>
+          <article class="feature reveal" style="--d:1">
+            <span class="feature-ico" data-icon="target"></span>
+            <h3>Eligibility Checker</h3>
+            <p>Enter your details and instantly see which scholarships you can apply for.</p>
+            <a href="eligibility.html" class="link-arrow">Check eligibility <span data-icon="arrowRight"></span></a>
+          </article>
+          <article class="feature reveal" style="--d:2">
+            <span class="feature-ico" data-icon="listChecks"></span>
+            <h3>Application Guide</h3>
+            <p>Step-by-step guidance, a document checklist and tips for a strong application.</p>
+            <a href="guide.html" class="link-arrow">Read the guide <span data-icon="arrowRight"></span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="how section-tight">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Three simple steps</span>
+          <h2>From search to submission</h2>
+        </div>
+        <div class="how-steps">
+          <div class="how-step reveal" style="--d:0">
+            <div class="how-num">01</div>
+            <h3>Discover</h3>
+            <p>Explore scholarships in Pakistan and abroad, sorted by the nearest deadline.</p>
+          </div>
+          <div class="how-step reveal" style="--d:1">
+            <div class="how-num">02</div>
+            <h3>Check your fit</h3>
+            <p>Enter your level, CGPA and income to see where you qualify right now.</p>
+          </div>
+          <div class="how-step reveal" style="--d:2">
+            <div class="how-num">03</div>
+            <h3>Apply with confidence</h3>
+            <p>Follow the guide and tick off every document before the deadline.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="container">
+        <div class="section-row reveal">
+          <div class="section-head left">
+            <span class="kicker">Closing soon</span>
+            <h2>Upcoming Deadlines</h2>
+            <p>Scholarships closing soonest</p>
+          </div>
+          <a href="directory.html" class="btn btn-outline">View All Scholarships <span data-icon="arrowRight" data-icon-class="icon-arrow"></span></a>
+        </div>
+        <div class="card-grid" id="upcoming"></div>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="container">
+        <div class="cta reveal">
+          <div>
+            <h2>Not sure where you qualify?</h2>
+            <p>Answer a few quick questions and get a personalised list of scholarships that match your profile.</p>
+          </div>
+          <div class="cta-actions">
+            <a href="eligibility.html" class="btn btn-light">Check My Eligibility <span data-icon="arrowRight" data-icon-class="icon-arrow"></span></a>
+            <a href="guide.html" class="btn btn-ghost-light">Read the Guide</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><span class="logo-mark" data-icon="cap"></span><span>Scholar<span>Path</span></span></a>
+          <p>ScholarPath &ndash; Scholarship and Financial Aid Information. Find local and international scholarships, check your eligibility and apply with confidence.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html">Scholarship Directory</a></li>
+            <li><a href="eligibility.html">Eligibility Checker</a></li>
+            <li><a href="guide.html">Application Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Study Levels</h4>
+          <ul>
+            <li><a href="directory.html?level=Intermediate">Intermediate</a></li>
+            <li><a href="directory.html?level=Undergraduate">Undergraduate</a></li>
+            <li><a href="directory.html?level=Masters">Masters</a></li>
+            <li><a href="directory.html?level=PhD">PhD</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Good to know</h4>
+          <div class="footer-note"><span data-icon="info"></span><span>Information is for guidance only &ndash; always confirm on the official website. Real scholarships never ask you to pay to apply.</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> ScholarPath. Developed by <strong>Marwa Akram</strong>.</p>
+        <p>Information is for guidance only &ndash; always confirm on the official website.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

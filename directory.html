@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScholarPath – Scholarship Directory</title>
+  <meta name="description" content="Search and filter all available scholarships by level, country and deadline.">
+  <meta name="theme-color" content="#0b1026">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%234f46e5'/%3E%3Cpath d='M20 10.5 12 6.5l-8 4 8 4 8-4z' fill='none' stroke='white' stroke-width='1.8' stroke-linejoin='round'/%3E%3Cpath d='M7.5 12.5v3.5c2.5 2 6.5 2 9 0v-3.5' fill='none' stroke='white' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.className += " js";</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a href="index.html" class="logo" aria-label="ScholarPath home">
+        <span class="logo-mark" data-icon="cap"></span><span>Scholar<span>Path</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html" class="active" aria-current="page">Scholarships</a></li>
+        <li><a href="eligibility.html">Eligibility Checker</a></li>
+        <li><a href="guide.html">Application Guide</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="page-header has-overlap">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span data-icon="chevronRight"></span><span>Scholarships</span></nav>
+        <h1>Scholarship Directory</h1>
+        <p>Search and filter all available scholarships</p>
+      </div>
+    </div>
+
+    <section class="section-tight">
+      <div class="container">
+        <div class="filter-wrap">
+          <form class="filters" id="filters" role="search" onsubmit="return false">
+            <div class="filter-field filter-search">
+              <label for="search">Search</label>
+              <div class="input-icon">
+                <span class="ico" data-icon="search"></span>
+                <input type="text" id="search" placeholder="Search by name or provider..." autocomplete="off">
+              </div>
+            </div>
+            <div class="filter-field">
+              <label for="level">Level</label>
+              <div class="input-icon">
+                <span class="ico" data-icon="cap"></span>
+                <select id="level">
+                  <option value="">All Levels</option>
+                  <option>Intermediate</option>
+                  <option>Undergraduate</option>
+                  <option>Masters</option>
+                  <option>PhD</option>
+                </select>
+              </div>
+            </div>
+            <div class="filter-field">
+              <label for="country">Country</label>
+              <div class="input-icon">
+                <span class="ico" data-icon="globe"></span>
+                <select id="country">
+                  <option value="">All Countries</option>
+                </select>
+              </div>
+            </div>
+            <div class="filter-field">
+              <label for="sort">Sort by</label>
+              <div class="input-icon">
+                <span class="ico" data-icon="sliders"></span>
+                <select id="sort">
+                  <option value="deadline">Deadline</option>
+                  <option value="name">Name A–Z</option>
+                </select>
+              </div>
+            </div>
+            <div class="filter-field filter-reset">
+              <button type="button" class="btn btn-outline btn-block" id="resetFilters" style="height:48px"><span data-icon="refresh"></span>Reset</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="results-bar">
+          <p class="result-count" id="count" aria-live="polite"></p>
+          <div class="active-filters" id="activeFilters"></div>
+        </div>
+        <div class="card-grid" id="list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><span class="logo-mark" data-icon="cap"></span><span>Scholar<span>Path</span></span></a>
+          <p>ScholarPath &ndash; Scholarship and Financial Aid Information. Find local and international scholarships, check your eligibility and apply with confidence.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html">Scholarship Directory</a></li>
+            <li><a href="eligibility.html">Eligibility Checker</a></li>
+            <li><a href="guide.html">Application Guide</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Study Levels</h4>
+          <ul>
+            <li><a href="directory.html?level=Intermediate">Intermediate</a></li>
+            <li><a href="directory.html?level=Undergraduate">Undergraduate</a></li>
+            <li><a href="directory.html?level=Masters">Masters</a></li>
+            <li><a href="directory.html?level=PhD">PhD</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Good to know</h4>
+          <div class="footer-note"><span data-icon="info"></span><span>Information is for guidance only &ndash; always confirm on the official website. Real scholarships never ask you to pay to apply.</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> ScholarPath. Developed by <strong>Marwa Akram</strong>.</p>
+        <p>Information is for guidance only &ndash; always confirm on the official website.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/directory.js"></script>
+</body>
+</html>
